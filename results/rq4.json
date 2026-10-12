@@ -1,0 +1,220 @@
+{
+  "feature_classifier": {
+    "test_acc": 0.6055002370791844,
+    "test_macro_f1": 0.6010485947605414,
+    "importance": {
+      "n_lines": 0.07479699306098468,
+      "colons": 0.0674864176036059,
+      "type_token_ratio": 0.04883507077085245,
+      "avg_word_len": 0.03495057492378364,
+      "avg_sent_len": 0.0341244497725862,
+      "numbered_lines": 0.026863526259498706,
+      "bullet_lines": 0.02266901841667579,
+      "bold_marks": 0.02231281919699941,
+      "n_words": 0.02123019866756546,
+      "starts_with_sure": 0.018835303654344847,
+      "exclamations": 0.016899059745315005,
+      "first_person_i": 0.011976906627771466,
+      "digits_frac": 0.007452267138696134,
+      "n_chars": 0.006165720660615115,
+      "as_an_ai": 0.004494736295762469,
+      "code_blocks": 0.004046742573272777,
+      "apology": 0.0037595346152263344,
+      "questions": 0.0018476770639711316,
+      "header_lines": 9.44806494953987e-05,
+      "upper_frac": -0.0009048427921657832
+    }
+  },
+  "top_ngrams": {
+    "Claude": [
+      "\u2022",
+      "<nl> \u2022",
+      "Here is",
+      ": <nl>",
+      "Here",
+      "So",
+      "<nl> <nl>",
+      "summary",
+      "like",
+      "summary ,",
+      "<nl> So",
+      "<nl>",
+      "So in",
+      ":",
+      "apologize ,"
+    ],
+    "GPT": [
+      "or",
+      "various",
+      "<nl> -",
+      "As",
+      "So ,",
+      ",",
+      "an AI",
+      "As an",
+      ". Here",
+      "(",
+      "AI language",
+      "-",
+      "provide",
+      "assist",
+      "assistant"
+    ],
+    "Llama": [
+      "and the",
+      "the",
+      "such as",
+      "such",
+      "\\",
+      "> <",
+      ", and",
+      "and is",
+      "<nl> It",
+      "\\ *",
+      "used to",
+      "to",
+      "as",
+      "It '",
+      "on ,"
+    ],
+    "PaLM": [
+      "<nl> *",
+      "*",
+      "* *",
+      "also",
+      ". <nl>",
+      ". The",
+      "is a",
+      "<nl> Here",
+      "<nl> The",
+      "$",
+      "<nl> I",
+      "that is",
+      "The",
+      "are",
+      "here is"
+    ]
+  },
+  "ablations": [
+    {
+      "ablation": "none (full text)",
+      "model": "CNN",
+      "test_acc": 0.7064959696538644,
+      "test_macro_f1": 0.7054280383596229,
+      "per_class_f1": {
+        "GPT": 0.5562913907284768,
+        "Claude": 0.8754863813229572,
+        "Llama": 0.5862646566164154,
+        "PaLM": 0.8036697247706422
+      }
+    },
+    {
+      "ablation": "none (full text)",
+      "model": "LSTM",
+      "test_acc": 0.6974869606448554,
+      "test_macro_f1": 0.6985527810722394,
+      "per_class_f1": {
+        "GPT": 0.5982758620689655,
+        "Claude": 0.877906976744186,
+        "Llama": 0.5222672064777328,
+        "PaLM": 0.7957610789980732
+      }
+    },
+    {
+      "ablation": "strip_formatting",
+      "model": "CNN",
+      "test_acc": 0.6813655761024182,
+      "test_macro_f1": 0.6763001459786275,
+      "per_class_f1": {
+        "GPT": 0.5835694050991501,
+        "Claude": 0.8574091332712023,
+        "Llama": 0.5077081192189106,
+        "PaLM": 0.756513926325247
+      }
+    },
+    {
+      "ablation": "strip_formatting",
+      "model": "LSTM",
+      "test_acc": 0.6590801327643433,
+      "test_macro_f1": 0.6657931262186989,
+      "per_class_f1": {
+        "GPT": 0.5445736434108527,
+        "Claude": 0.8439425051334702,
+        "Llama": 0.54035683942226,
+        "PaLM": 0.7342995169082126
+      }
+    },
+    {
+      "ablation": "first_50_words",
+      "model": "CNN",
+      "test_acc": 0.6059743954480796,
+      "test_macro_f1": 0.5932056028739915,
+      "per_class_f1": {
+        "GPT": 0.5060240963855421,
+        "Claude": 0.7826904985888994,
+        "Llama": 0.4004424778761062,
+        "PaLM": 0.6836653386454183
+      }
+    },
+    {
+      "ablation": "first_50_words",
+      "model": "LSTM",
+      "test_acc": 0.6192508297771455,
+      "test_macro_f1": 0.6255374011480399,
+      "per_class_f1": {
+        "GPT": 0.5202952029520295,
+        "Claude": 0.7808510638297872,
+        "Llama": 0.48381294964028776,
+        "PaLM": 0.7171903881700554
+      }
+    },
+    {
+      "ablation": "lowercase_words_only",
+      "model": "CNN",
+      "test_acc": 0.6424845898530109,
+      "test_macro_f1": 0.6449859807384405,
+      "per_class_f1": {
+        "GPT": 0.5205183585313174,
+        "Claude": 0.8372093023255814,
+        "Llama": 0.5220228384991843,
+        "PaLM": 0.7001934235976789
+      }
+    },
+    {
+      "ablation": "lowercase_words_only",
+      "model": "LSTM",
+      "test_acc": 0.6069227121858701,
+      "test_macro_f1": 0.6121300429009013,
+      "per_class_f1": {
+        "GPT": 0.47713717693836977,
+        "Claude": 0.8012108980827447,
+        "Llama": 0.488135593220339,
+        "PaLM": 0.6820365033621518
+      }
+    },
+    {
+      "ablation": "drop_first_10_words",
+      "model": "CNN",
+      "test_acc": 0.6116642958748222,
+      "test_macro_f1": 0.6225416948346997,
+      "per_class_f1": {
+        "GPT": 0.46435845213849286,
+        "Claude": 0.7736450584484591,
+        "Llama": 0.5205070842654735,
+        "PaLM": 0.7316561844863732
+      }
+    },
+    {
+      "ablation": "drop_first_10_words",
+      "model": "LSTM",
+      "test_acc": 0.5922238027501185,
+      "test_macro_f1": 0.597007698628753,
+      "per_class_f1": {
+        "GPT": 0.48128342245989303,
+        "Claude": 0.7093023255813954,
+        "Llama": 0.47363552266419984,
+        "PaLM": 0.7238095238095238
+      }
+    }
+  ]
+}
